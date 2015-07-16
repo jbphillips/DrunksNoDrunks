@@ -1,0 +1,39 @@
+<ion-view view-title="Drunks No Drunks">
+  <ion-content class="padding">
+    <div class="list card">
+      <div class="item item-divider">A pub calc tool</div>
+      <div class="item item-body">
+        <div>
+          <label class="item item-input">
+            <span class="input-label">Total of bill:</span>
+            <input id="totalBill" type="text">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Tip Percentage:</span>
+            <input type="text">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">How many drunks?:</span>
+            <input type="text">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">How many sobers?:</span>
+            <input type="text">
+          </label>
+          <button ng-controller="DashCtrl" ng-click="calc()" class="button button-positive">Calculate</button>
+        </div>
+      </div>
+      <div class="list card">
+        <form action="javascript:void(calc())">
+          Amount: $<input id="bill" type="text">
+          <br>
+          <input type="submit" value="Calculate">
+          <br>
+          Tip: <span id="tip"></span>
+          <br>
+          Total: <span id="total"></span>
+        </form>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>
