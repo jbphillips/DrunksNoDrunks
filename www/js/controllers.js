@@ -1,8 +1,8 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope, $http) {
 
-      function calc() {
+     $scope.calc = function() {
         var bill = Number(document.getElementById('bill').value);
         var tip = bill * .15;
         var total_bill = bill + tip;
