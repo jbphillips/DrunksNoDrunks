@@ -14,8 +14,19 @@ angular.module('starter.controllers', [])
          var drunks = Number(document.getElementById('drunks').value);
          var nondrunks = Number(document.getElementById('nondrunks').value);
 
-         var drunksTotal = (drinkTotal / drunks) + (total_food_bill / (drunks + nondrunks));
-         var nonDrunksTotal = total_food_bill / (drunks + nondrunks);
+         var drunksTotal = 0;
+         var nonDrunksTotal = 0;
+
+         if(drunks > 0)
+            drunksTotal = (drinkTotal / drunks) + (total_food_bill / (drunks + nondrunks));
+
+         if(nondrunks > 0) {
+             nonDrunksTotal = total_food_bill / (drunks + nondrunks);
+         }
+
+         if(drunks < 1 && drinkTotal > 0)
+            alert("Can not have a drink total with no drunks dumbass")
+
 
          document.getElementById("total_food_bill").innerHTML= "$"+Number(total_food_bill).toFixed(2);
          document.getElementById("total_bill").innerHTML= "$"+Number(total_bill).toFixed(2);
