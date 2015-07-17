@@ -1,12 +1,16 @@
-<ion-view view-title="Drunks No Drunks">
+<ion-view view-title="Judy's Drinking Bill Calculator">
   <ion-content class="padding">
     <div class="list card">
-      <div class="item item-divider">A pub calc tool</div>
-      <div class="item item-body">
-        <div>
+          <div class="item item-divider">A pub calc tool</div>
+          <div class="item item-body">
+            <div>
+              <label class="item item-input">
+                <span class="input-label">Food Total:</span>
+                <input id="foodTotal" type="text">
+              </label>
           <label class="item item-input">
-            <span class="input-label">Total of bill:</span>
-            <input id="bill" type="text">
+            <span class="input-label">Drink Total:</span>
+            <input id="drinkTotal" type="text">
           </label>
           <label class="item item-input">
             <span class="input-label">Tip Percentage:</span>
@@ -14,13 +18,24 @@
           </label>
           <label class="item item-input">
             <span class="input-label">How many drunks?:</span>
-            <input type="text">
+            <input id="drunks" type="text">
           </label>
           <label class="item item-input">
             <span class="input-label">How many sobers?:</span>
-            <input type="text">
+            <input id="nondrunks" type="text">
           </label>
+          <br>
           <button ng-controller="DashCtrl" ng-click="calc()" class="button button-positive">Calculate</button>
+          <br>
+          <br>
+          Food Total: <span id="total_food_bill"></span>
+          <br>
+          Bill Total with Drinks: <span id="total_bill"></span>
+          <br>
+          <br>
+          Drunks each pay: <span id="drunksTotal"></span>
+          <br>
+          Non-Drunks each pay: <span id="nonDrunksTotal"></span>
         </div>
       </div>
       <!--

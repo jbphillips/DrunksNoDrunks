@@ -3,14 +3,26 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope, $http) {
 
      $scope.calc = function() {
-        var bill = Number(document.getElementById('bill').value);
-        var tip = bill * .15;
-        var total_bill = bill + tip;
+         var foodTotal = Number(document.getElementById('foodTotal').value);
+         var tip = foodTotal * (Number(document.getElementById('tip').value) / 100);
+         var total_food_bill = foodTotal + tip;
 
-        document.getElementById("tip").innerHTML= "$"+Number(tip).toFixed(2);
-        document.getElementById("total").innerHTML= "$"+Number(total_bill).toFixed(2);
+         var drinkTotal = Number(document.getElementById('drinkTotal').value);
+
+         var total_bill = foodTotal + drinkTotal + tip;
+
+         var drunks = Number(document.getElementById('drunks').value);
+         var nondrunks = Number(document.getElementById('nondrunks').value);
+
+         var drunksTotal = (drinkTotal / drunks) + (total_food_bill / (drunks + nondrunks));
+         var nonDrunksTotal = total_food_bill / (drunks + nondrunks);
+
+         document.getElementById("total_food_bill").innerHTML= "$"+Number(total_food_bill).toFixed(2);
+         document.getElementById("total_bill").innerHTML= "$"+Number(total_bill).toFixed(2);
+
+         document.getElementById("drunksTotal").innerHTML= "$"+Number(drunksTotal).toFixed(2);
+         document.getElementById("nonDrunksTotal").innerHTML= "$"+Number(nonDrunksTotal).toFixed(2);
       }
-
     })
 
 .controller('ChatsCtrl', function($scope, Chats) {
