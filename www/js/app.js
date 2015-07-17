@@ -5,7 +5,26 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', [
+  'ionic',
+  'ngCordova',
+  'ionic.service.core',
+  'ionic.service.push',
+  'starter.controllers',
+  'starter.services'
+])
+
+.config(['$ionicAppProvider', function($ionicAppProvider) {
+  // Identify app
+  $ionicAppProvider.identify({
+    // The App ID (from apps.ionic.io) for the server
+    app_id: '7f422d39',
+    // The public API key all services will use for this app
+    api_key: '1c571c56c1341d05e9f67c0e989153c46d7cd86ee075751f',
+    // Set the app to use development pushes
+    dev_push: true
+  });
+}])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
