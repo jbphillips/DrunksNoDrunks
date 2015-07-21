@@ -1,8 +1,13 @@
-<ion-view view-title="Judy's Drinking Bill Calculator">
-    <img src="img/ionic.png" height="10%" width="10%">
+<ion-view view-title="Judy's Bill Splitter">
+   <!-- <img src="img/ionic.png" height="10%" width="10%"> -->
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="calcTipForm($event)">
+            Tip Calculator
+        </button>
+    </ion-nav-buttons>
   <ion-content class="padding">
     <div class="list card">
-          <div class="item item-divider">A pub calc tool</div>
+          <div class="item item-divider">Split the bill amoungst friends</div>
           <div class="item item-body">
             <div>
               <label class="item item-input">
@@ -13,6 +18,10 @@
             <span class="input-label">Drink Total:</span>
             <input id="drinkTotal" type="text">
           </label>
+            <label class="item item-input">
+                <span class="input-label">Tax Total:</span>
+                <input id="taxTotal" type="text">
+            </label>
           <label class="item item-input">
             <span class="input-label">Tip Percentage:</span>
             <input id="tip" type="text">
@@ -25,11 +34,8 @@
             <span class="input-label">How many sobers?:</span>
             <input id="nondrunks" type="text">
           </label>
-          <br>
           <button ng-controller="DashCtrl" ng-click="calc()" class="button button-block button-positive">Calculate</button>
 
-          <br>
-          <br>
           Food Total: <span id="total_food_bill"></span>
           <br>
           Bill Total with Drinks: <span id="total_bill"></span>
@@ -40,19 +46,32 @@
           Non-Drunks each pay: <span id="nonDrunksTotal"></span>
         </div>
       </div>
-      <!--
-      <div class="list card">
-        <form action="javascript:void(calc())">
-          Amount: $<input id="bill" type="text">
-          <br>
-          <input type="submit" value="Calculate">
-          <br>
-          Tip: <span id="tip"></span>
-          <br>
-          Total: <span id="total"></span>
-        </form>
-        </div>
-        -->
     </div>
   </ion-content>
 </ion-view>
+
+<script id="calcTip-popover.html" type="text/ng-template">
+    <ion-popover-view>
+        <ion-header-bar>
+            <h1 class="title">Tip Calc</h1>
+        </ion-header-bar>
+        <ion-content>
+            <label class="item item-input">
+                <span class="input-label">Bill Total:</span>
+                <input id="billTotal" type="text">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Tip Percentage:</span>
+                <input id="tipPercentage" type="text">
+            </label>
+            <div class="col text-center">
+            <button class="button button-balanced" ng-click="calcTip($event)">
+                Calculate Tip
+            </button>
+            </div>
+            <label class="item item-label">
+            Suggested Tip = <span id="tipAmount"></span>
+                </label>
+        </ion-content>
+    </ion-popover-view>
+</script>

@@ -1,15 +1,48 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $http) {
+.controller('DashCtrl', function($scope, $http, $ionicPopover) {
+
+        var template = '<ion-popover-view><ion-header-bar> <h1 class="title">Default Title</h1> </ion-header-bar> <ion-content> Uh-oh! Its dead Jim! </ion-content></ion-popover-view>';
+
+        $scope.popover = $ionicPopover.fromTemplate(template, {
+            scope: $scope
+        });
+
+    $scope.calcTipForm = function($event) {
+        $scope.popover.show($event);
+    };
+
+        $ionicPopover.fromTemplateUrl('calcTip-popover.html', {
+            scope: $scope
+        }).then(function(popover) {
+            $scope.popover = popover;
+        });
+
+        $scope.closePopover = function() {
+            $scope.popover.hide();
+        };
+        //Cleanup the popover when we're done with it!
+        $scope.$on('$destroy', function() {
+            $scope.popover.remove();
+        });
+        // Execute action on hide popover
+        $scope.$on('popover.hidden', function() {
+            // Execute action
+        });
+        // Execute action on remove popover
+        $scope.$on('popover.removed', function() {
+            // Execute action
+        });
 
      $scope.calc = function() {
          var foodTotal = Number(document.getElementById('foodTotal').value);
          var tip = foodTotal * (Number(document.getElementById('tip').value) / 100);
+         var tax = Number(document.getElementById('taxTotal').value);
          var total_food_bill = foodTotal + tip;
 
          var drinkTotal = Number(document.getElementById('drinkTotal').value);
 
-         var total_bill = foodTotal + drinkTotal + tip;
+         var total_bill = foodTotal + drinkTotal + tip + tax;
 
          var drunks = Number(document.getElementById('drunks').value);
          var nondrunks = Number(document.getElementById('nondrunks').value);
@@ -35,7 +68,14 @@ angular.module('starter.controllers', [])
          document.getElementById("nonDrunksTotal").innerHTML= "$"+Number(nonDrunksTotal).toFixed(2);
       }
 
+        $scope.calcTip = function() {
+            var billTotal = Number(document.getElementById('billTotal').value);
+            var tip = Number(document.getElementById('tipPercentage').value) / 100;
 
+            var suggestedTip = billTotal * tip;
+
+            document.getElementById("tipAmount").innerHTML= "$"+Number(suggestedTip).toFixed(2);
+        }
     })
 
 .controller('ChatsCtrl', function($scope, Chats) {
