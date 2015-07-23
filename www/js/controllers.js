@@ -35,6 +35,9 @@ angular.module('starter.controllers', [])
         });
 
      $scope.calc = function() {
+
+         validate();
+
          var foodTotal = Number(document.getElementById('foodTotal').value);
          var tip = foodTotal * (Number(document.getElementById('tip').value) / 100);
          var tax = Number(document.getElementById('taxTotal').value);
@@ -75,6 +78,28 @@ angular.module('starter.controllers', [])
             var suggestedTip = billTotal * tip;
 
             document.getElementById("tipAmount").innerHTML= "$"+Number(suggestedTip).toFixed(2);
+        }
+
+        function validate() {
+
+            if( isNaN(Number(document.getElementById('foodTotal').value))){
+                alert("Food Total is not a number")
+            }
+            if( isNaN(Number(document.getElementById('tip').value))){
+                alert("Tip entry is not a number")
+            }
+            if( isNaN(Number(document.getElementById('taxTotal').value))){
+                alert("Tax Total is not a number")
+            }
+            if( isNaN(Number(document.getElementById('drinkTotal').value))){
+                alert("Drink Total is not a number")
+            }
+            if( isNaN(Number(document.getElementById('drunks').value))){
+                alert("Input for drunks is not a number")
+            }
+            if( isNaN(Number(document.getElementById('nondrunks').value))){
+                alert("Input for Sobers is not a number")
+            }
         }
     })
 
