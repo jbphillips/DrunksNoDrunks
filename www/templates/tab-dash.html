@@ -7,7 +7,7 @@
     </ion-nav-buttons>
   <ion-content class="padding">
     <div class="list card">
-          <div class="item item-divider">Split the bill amoungst friends</div>
+          <!-- <div class="item item-divider">Split the bill amoungst friends</div> -->
           <div class="item item-body">
             <div>
               <label class="item item-input">
@@ -34,7 +34,7 @@
             <span class="input-label">How many sobers?:</span>
             <input id="nondrunks" type="text">
           </label>
-          <button ng-controller="DashCtrl" ng-click="calc()" class="button button-block button-positive">Calculate</button>
+          <button ng-controller="DashCtrl" ng-click="calc()" class="button button-block button-royal">Calculate</button>
 
           Food Total: <span id="total_food_bill"></span>
           <br>
@@ -65,7 +65,7 @@
                 <input id="tipPercentage" type="text">
             </label>
             <div class="col text-center">
-            <button class="button button-balanced" ng-click="calcTip($event)">
+            <button class="button button-royal" ng-click="calcTip($event)">
                 Calculate Tip
             </button>
             </div>

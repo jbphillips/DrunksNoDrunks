@@ -1,23 +1,21 @@
-<ion-view view-title="Help me!! Uggghhhh!!!">
+<ion-view view-title="Need Help?">
 
   <ion-content>
-    <ion-list>
+    <div class="list card">
 
-      Hey listen... I can't help if I'm not there, although please feel free to email me!
+      <div class="item item-avatar">
+        <img src="images/Help.png">
+        <h2>Problems?</h2>
+        <p>Drop a bug notice to me!</p>
+        <br>
+        <button
+                ng-click="sendEmail()"
+                class="button ion-bug button-block button-royal">Bug Me</button>
+      </div>
 
-      <a class="item item-icon-left" href="mailto:jamminjimi@gmail.com"> Email: Jimi </a>
-
-    </ion-list>
-      <img class="start-content-img" src="images/judy.png" height="20%" width="20%">
-    </ion-list>
-
-    <button class="button button-block button-dark" ng-click="identifyUser()">
-      Identify a user
-    </button>
-
-    <button class="button button-block button-positive" ng-if="identified" ng-click="pushRegister()">
-      Register for Push
-    </button>
-
-  </ion-content>
+      <div class="item ">
+        <img src="images/judy.png" style="max-width: 60%;
+        max-height: 60%; display:block; margin:auto;">
+      </div>
+    </div>
 </ion-view>

@@ -1,9 +1,23 @@
 {
-  "name": "HelloIonic",
-  "private": "true",
+  "name": "JudysBillCalculator",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.0.1",
     "ngCordova": "~0.1.17-alpha",
     "ionic-service-push": "~0.1.8"
-  }
+  },
+  "version": "0.0.1",
+  "homepage": "https://github.com/jbphillips/DrunksNoDrunks",
+  "authors": [
+    "Jim Phillips <jamminjimi@gmail.com>"
+  ],
+  "description": "Bill calc that allows for people drinking alcohol and those that are not.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ]
 }
