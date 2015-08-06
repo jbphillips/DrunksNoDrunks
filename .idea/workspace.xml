@@ -106,7 +106,7 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1438" />
+    <option name="x" value="227" />
     <option name="y" value="67" />
     <option name="width" value="1022" />
     <option name="height" value="819" />
@@ -291,7 +291,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1438" y="67" width="1022" height="819" extended-state="0" />
+    <frame x="227" y="67" width="1022" height="819" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
